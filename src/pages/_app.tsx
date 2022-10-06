@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Magaldi</title>
+        <title>Haddock test</title>
         <meta name='description' content='Test page' />
       </Head>
 

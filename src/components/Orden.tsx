@@ -8,9 +8,11 @@ interface OrderHandler {
   getTotal: () => number;
 }
 
-// let list = JSON.parse('./list.json');
+//json file with discounts and products data
 console.log('lista', list);
+//discounts list form json file
 const discounts: Discount[] = list['discounts'];
+//products list form json file
 const products: Product[] = list['products'];
 
 export default class MyOrderHandler implements OrderHandler {
@@ -21,7 +23,7 @@ export default class MyOrderHandler implements OrderHandler {
   add(number: number, quantity: number) {
     let product, discount;
     let sum = 0;
-    // get product
+    // get product from product's list by the code number
     for (let i = 0; i < products.length; i++) {
       if (products[i].number === number) product = products[i];
     }
@@ -30,15 +32,17 @@ export default class MyOrderHandler implements OrderHandler {
       if (discounts[i].active && discounts[i].number === number)
         discount = discounts[i];
     }
-    //apply 2x1 discount
+    //apply 2x1 discount if exists on the product
     if (discount && discount.discount === '2x1') {
+      //check quantity
       quantity % 2 === 0
         ? (quantity = quantity / 2)
         : (quantity = (quantity - 1) / 2 + 1);
     }
+    //get amount by this product
     sum = quantity * product.price;
 
-    //set total
+    //set total price
     this.totalPrice = this.totalPrice + sum;
   }
   getTotal() {
