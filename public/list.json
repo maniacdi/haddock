@@ -1,0 +1,30 @@
+{
+  "discounts": [
+    {
+      "discount": "2x1",
+      "active": true,
+      "number": 12
+    },
+    {
+      "discount": "5€",
+      "active": true
+    }
+  ],
+  "products": [
+    {
+      "number": 12,
+      "name": "Spring rolls",
+      "price": 4.5
+    },
+    {
+      "number": 21,
+      "name": "Fried rice with pork",
+      "price": 6
+    },
+    {
+      "number": 37,
+      "name": "Chicken with almond sauce",
+      "price": 6.5
+    }
+  ]
+}
